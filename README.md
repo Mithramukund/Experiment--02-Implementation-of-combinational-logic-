@@ -1,5 +1,5 @@
-# Experiment--04-Implementation-of-combinational-logic-using-universal-gates-
- ## Implementation-of-Half-subtractor-and-Full-subtractor-circuit
+# Experiment--02-Implementation-of-combinational-logic
+ 
 ## AIM:
 To implement the given logic function using NAND and NOR gates and to verify its operation in Quartus using Verilog programming.
 F=((C'.B.A)'(D'.C.A)'(C.B'.A)')' using NAND gate
@@ -31,11 +31,12 @@ A universal gate is a logic gate which can implement any Boolean function withou
 ## Program:
 
 Program to design a Implementation of combinational logic using universal gates-  and verify its truth table in quartus using Verilog programming.
-Developed by: PRANAVE B
-RegisterNumber:  212221240040
+Developed by: MITHRA MUKUNDAA SG
+RegisterNumber:  212222100026
 
 ## F=((C'.B.A)'(D'.C.A)'(C.B'.A)')' using NAND gate
 
+```python
 module Combination(A,B,C,D,F);
 input A,B,C,D;
 output F;
@@ -45,9 +46,10 @@ assign Q = D&(~C)&(~A);
 assign R = (~C)&B&(~A);
 assign F = (~P&~Q&~R);
 endmodule
-
+```
 ## F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')' using NOR gate
 
+```python
 module norcombination(A,B,C,D,F);
 input A,B,C,D;
 output F;
@@ -58,7 +60,7 @@ assign R = C&(~B)&A;
 assign S = ~(P|Q|R);
 not(F,S);
 endmodule
-
+```
 
 ## Output:
 ### F=((C'.B.A)'(D'.C.A)'(C.B'.A)')' using NAND gate
